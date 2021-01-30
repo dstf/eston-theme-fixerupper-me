@@ -1,6 +1,6 @@
-### Ghost Eston
+# Ghost Eston
 
-> A simple, notebook inspired, theme for Ghost. Includes four colour schemes to kick start your customisation.
+A simple, two column, theme for Ghost. Includes four colour schemes.
 
 
 
