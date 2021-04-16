@@ -1,0 +1,12 @@
+{{!
+
+    Renders:
+      Image - Photo
+
+}}
+
+{{#if feature_image}}
+  {{^has tag="_quote, _link, _chat, _audio, _video"}}
+    <figure class="post-media"></figure>
+  {{/has}}
+{{/if}}

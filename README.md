@@ -1,6 +1,8 @@
-# Ghost Eston
+### Ghost Theme
 
-A simple, two column, theme for Ghost. 
+> Ghost Theme
+
+A simple, two column, theme for Ghost.
 
 
 

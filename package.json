@@ -1,0 +1,13 @@
+{
+  "name": "fixerupper.me",
+  "description": "fix-upper",
+  "version": "2.0",
+  "engines": {
+    "ghost": ">=4.0.0",
+    "ghost-api": "v3"
+  },
+ "config": {
+        "posts_per_page": 6
+    }
+}
+
