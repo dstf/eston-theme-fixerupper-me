@@ -30,7 +30,7 @@
     {{!-- Pinterest --}}
     {{#if feature_image}}
     {{^has tag="_quote, _link, _chat, _audio, _video"}}
-    <a href="http://pinterest.com/pin/create/button/?url={{url absolute="true"}}&amp;description={{encode title}}{{#if img_url}}{{^has tag="_embed"}}&amp;media={{@blog.url}}{{img_url}}{{/has}}{{/if}}" class="icon icon-pinterest popup-item" onclick="window.open(this.href, 'pinterest-share', 'width=770,height=330');return false;">
+    <a href="http://pinterest.com/pin/create/button/?url={{url absolute="true"}}&amp;description={{encode title}}{{#if img_url}}{{^has tag="_embed"}}&amp;media={{@site.url}}{{img_url}}{{/has}}{{/if}}" class="icon icon-pinterest popup-item" onclick="window.open(this.href, 'pinterest-share', 'width=770,height=330');return false;">
       <span class="meta-count" data-js="share-pinterest-count">0</span><span class="meta-plural" data-js="share-pinterest-plural"> Pin</span>
     </a>
     {{/has}}
