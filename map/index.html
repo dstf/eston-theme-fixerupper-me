@@ -1,0 +1,141 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Map fixerupper.me</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <script language="javascript">var ie = 0; </script>
+    <script language="vbscript">ie = 1</script>
+</head>
+
+<body>
+    <div id='header'>
+        <label>
+         <!--   <strong>Map *Fixerupper.me</strong> -->
+        </label>
+           </div>
+
+    <textarea id='src' name="hide" style="display:none"  class='code_box' rows="13" cols="80" style='margin-top:10px;' oninput='javascript:draw();'>
+// Made with https://github.com/weidagang/text-diagram !
+object fixerupper mailfixerupper sysadminfixerupper vpnfixerupper pythonfixerupper
+space 3
+note left of mailfixerupper : \davide@fixerupper.me
+note left of vpnfixerupper : helsinki
+note right of vpnfixerupper :amsterdam
+note right of pythonfixerupper: programming zzzz
+note left of sysadminfixerupper: monitoring @_@
+space 2
+fixerupper->mailfixerupper : \\\\\\blog
+mailfixerupper->sysadminfixerupper :  mail server
+sysadminfixerupper->vpnfixerupper : SysAdmin stuff
+vpnfixerupper->pythonfixerupper: hiding-tunnel?
+pythonfixerupper->Map: shell scripting && python lab
+note left of fixerupper: \ website. . . . . .  . . .
+note left of fixerupper: \     https:\\fixerupper.me
+note right of Map: next---> API
+space 2
+note right of Map: happy hacking!. \n ^_^
+ </textarea>
+
+
+    <div id='msg' style='color:red'></div>
+    <div id='canvas'></div>
+
+    <script src='text-diagram.js'></script>
+    <script>
+        function message(text) {
+            var msg = document.getElementById('msg');
+            msg.innerHTML = text;
+        }
+
+        function clear_canvas() {
+            var canvas = document.getElementById('canvas');
+
+            if (canvas.hasChildNodes()) {
+                while (canvas.childNodes.length >= 1) {
+                    canvas.removeChild(canvas.firstChild);
+                }
+            }
+        }
+
+        function copy_source() {
+            let source = document.getElementById('src');
+            source.select();
+            document.execCommand('Copy');
+            if (window.getSelection) {
+                window.getSelection().removeAllRanges();
+            }
+        }
+
+        function copy_diagram() {
+            // Create a new textarea element and give it id='t'
+            let textarea = document.createElement('textarea')
+            textarea.id = 't'
+            // Optional step to make less noise on the page, if any!
+            textarea.style.height = 0
+            // Now append it to your page somewhere, I chose <body>
+            document.body.appendChild(textarea)
+            // Give our textarea a value of whatever inside the div of id='to-copy'
+            textarea.value = document.getElementById('diagram').innerText
+            // Now copy whatever inside the textarea to clipboard
+            let selector = document.querySelector('#t')
+            selector.select()
+            document.execCommand('copy')
+            // Remove the textarea
+            document.body.removeChild(textarea)
+        }
+
+        function draw() {
+            clear_canvas();
+            message('');
+
+            var src = document.getElementById('src');
+            var dom_ele = sequence_diagram(src.value);
+            if (null != dom_ele) {
+                var canvas = document.getElementById('canvas');
+                canvas.appendChild(dom_ele);
+            }
+            else {
+                message('Syntax error');
+            }
+        }
+
+        function example() {
+            var src = document.getElementById('src');
+            src.value = "// Made with https://github.com/weidagang/text-diagram !\n"
+                + "object fixerupper mailfixerupper sysadminfixerupper vpnfixerupper pythonfixerupper\n"
++ "fixerupper->mailfixerupper : email server\n"
++ "mailfixerupper->sysadminfixerupper :  Well...\nmonitoring.@_@\n"
++ "note left of vpnfixerupper : helsinki\n"
++ "sysadminfixerupper->vpnfixerupper :   hiding  - tunnel?\n"
++ "vpnfixerupper->pythonfixerupper: programming zzzz\n"
++ "space 5\n"
++ "note left of fixerupper: website blog\n"
++ "note right of sysadminfixerupper: Programming @_@\n"
++ "space 5\n"
++ "note right of Map: I'm so happy. \n ^_^<\n"
+                ;
+
+            draw();
+        }
+
+        draw();
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
